@@ -1,9 +1,26 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
+<div class="welcome">
   <h1>
     Welcome to {{title}}!
   </h1>
+</div>
+<div class=" welcome">
+  <input type="text" name="subject" [(ngModel)]="query">
+  <!-- binding html to ts, two way street -->
+  <button (click)="searchPosts()" > Submit </button>
+</div>
+<div class="container">
   <ul>
-    <li></li>
+    <li *ngFor="let post of postList" class="row">
+      <img src="{{ post.data.thumbnail }}" alt="" class="col-xs-4">
+      <a href="{{ post.data.url }}" class="col-xs-4" target="_blank">
+         {{ post.data.title }}
+      </a>
+      <div class="col-xs-4">
+        <p>Author: {{ post.data.author }}</p>
+        <p>UpVotes: {{ post.data.ups }}</p>
+        <p>Date: {{ post.data.created | date }}</p>
+      </div>
+    </li>
   </ul>
 </div>

@@ -1,0 +1,14 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  margin: 10px 0;
+}
+
+
+.welcome{
+  text-align: center;
+}
